@@ -1,4 +1,4 @@
-let NEW_USER_NAME = 'bobby joe'
+const NEW_USER_NAME = 'bobby joe'
 describe('Check API Requests', function () {
     before('Load JSON data', function () {
         cy.fixture('users').then((userList) => { //file can be found in fixtures folder
