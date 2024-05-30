@@ -1,8 +1,9 @@
+let NEW_USER_NAME = 'bobby joe'
 describe('Check API Requests', function () {
     before('Load JSON data', function () {
-        cy.fixture('users').then((userList) => {
+        cy.fixture('users').then((userList) => { //file can be found in fixtures folder
             this.userList = userList
-        })
+        }) //fixtures can be imported in multiple ways, if wished to use arrow functions () => instead of function() , them import of fixture must be declared at top of the page
     })
     it('API Test returns JSON with a list of users ', function () {
 
@@ -50,10 +51,10 @@ describe('Check API Requests', function () {
         cy.request({
             method: 'POST',
             url: '/users', //assuming baseUrl is set 
-            body: {name: 'NEW_USER_NAME'}   
+            body: { name: NEW_USER_NAME }
         }).then((reqResponse) => {
             expect(reqResponse.status).to.equal(200)
-            expect(reqResponse.body.name).to.include('NEW_USER_NAME')
+            expect(reqResponse.body.name).to.include(NEW_USER_NAME)
         })
     })
 })
