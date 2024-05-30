@@ -53,7 +53,7 @@ describe('Check API Requests', function () {
             body: {name: 'NEW_USER_NAME'}   
         }).then((reqResponse) => {
             expect(reqResponse.status).to.equal(200)
-            expect(reqResponse.body).to.include('NEW_USER_NAME')
+            expect(reqResponse.body.name).to.include('NEW_USER_NAME')
         })
     })
 })
